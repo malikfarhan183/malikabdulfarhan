@@ -36,6 +36,18 @@ docker compose up -d
 
 Then run `database/schema.sql` and `database/seed.sql` against the `ClientOpsStudio` database. Set `DATABASE_PROVIDER=mssql` in `.env` when you want the API to read/write SQL Server.
 
+For hosted MSSQL, set `MSSQL_AUTO_MIGRATE=true` so the API creates the required tables, indexes, and demo rows on startup.
+
+## Free Full-Stack URL
+
+The shortest recommended free public URL is:
+
+```text
+https://malikabdulfarhan.onrender.com
+```
+
+Use Render for the React + Node/Express app and Azure SQL Free for MSSQL. See `docs/free-fullstack-deployment.md` for the deployment checklist and required environment variables.
+
 ## GitHub vs Bitbucket
 
 Use GitHub for this portfolio repo. It is more recognizable to freelance clients, has strong public profile value, and the free plan is enough for this project. Bitbucket is still good for Atlassian/Jira-heavy teams, but it is less useful as a public portfolio signal.

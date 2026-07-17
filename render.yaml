@@ -1,0 +1,30 @@
+services:
+  - type: web
+    name: malikabdulfarhan
+    runtime: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DATABASE_PROVIDER
+        value: mssql
+      - key: MSSQL_AUTO_MIGRATE
+        value: true
+      - key: MSSQL_ENCRYPT
+        value: true
+      - key: JWT_EXPIRES_IN_SECONDS
+        value: 3600
+      - key: JWT_SECRET
+        generateValue: true
+      - key: MSSQL_SERVER
+        sync: false
+      - key: MSSQL_PORT
+        value: 1433
+      - key: MSSQL_DATABASE
+        sync: false
+      - key: MSSQL_USER
+        sync: false
+      - key: MSSQL_PASSWORD
+        sync: false

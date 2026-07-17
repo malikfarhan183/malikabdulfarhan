@@ -1,4 +1,5 @@
 import {InMemoryProjectRepository} from './inMemoryProjectRepository';
+import {getMssqlConfigFromEnv} from './mssql/mssqlConfig';
 import {MssqlProjectRepository} from './mssql/mssqlProjectRepository';
 import type {ProjectRepository} from './projectRepository';
 
@@ -11,14 +12,7 @@ export function getProjectRepository(): ProjectRepository {
 
   repository =
     process.env.DATABASE_PROVIDER === 'mssql'
-      ? new MssqlProjectRepository({
-          server: process.env.MSSQL_SERVER || 'localhost',
-          port: Number(process.env.MSSQL_PORT || 1433),
-          database: process.env.MSSQL_DATABASE || 'ClientOpsStudio',
-          user: process.env.MSSQL_USER || 'sa',
-          password: process.env.MSSQL_PASSWORD || '',
-          encrypt: process.env.MSSQL_ENCRYPT === 'true',
-        })
+      ? new MssqlProjectRepository(getMssqlConfigFromEnv())
       : new InMemoryProjectRepository();
 
   return repository;
