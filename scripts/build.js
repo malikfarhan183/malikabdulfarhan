@@ -32,6 +32,9 @@ function writeDeploymentHandler() {
   const source = createHandlerSource(assets, demoData);
 
   fs.writeFileSync(path.resolve(serverDist, 'index.js'), source, 'utf8');
+  fs.cpSync(path.resolve(appRoot, '.openai'), path.resolve(distRoot, '.openai'), {
+    recursive: true,
+  });
 }
 
 function collectStaticAssets(rootDir) {

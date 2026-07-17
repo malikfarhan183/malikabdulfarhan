@@ -1,5 +1,6 @@
 import React from 'react';
 import {
+  Box,
   Chip,
   LinearProgress,
   Paper,
@@ -89,7 +90,5 @@ const BoxTitle: React.FC = () => (
     <Typography color="text.secondary">Filtering, pagination, and indexed SQL-ready data.</Typography>
   </Box>
 );
-
-const Box = Stack;
 
 export default ProjectsTable;
