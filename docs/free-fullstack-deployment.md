@@ -17,37 +17,33 @@ https://malikabdulfarhan-clientops.onrender.com
 ## Hosting Shape
 
 - Render Free Web Service: React frontend and Node/Express API from one URL.
-- Azure SQL Database Free Offer: MSSQL database for the project data.
+- Neon Free Postgres: SQL database for the project data without card setup.
 - GitHub public repo: source code review for clients.
 
 ## Required Render Environment Variables
 
 ```text
 NODE_ENV=production
-DATABASE_PROVIDER=mssql
-MSSQL_AUTO_MIGRATE=true
-MSSQL_ENCRYPT=true
-MSSQL_PORT=1433
+DATABASE_PROVIDER=postgres
+POSTGRES_AUTO_MIGRATE=true
+POSTGRES_SSL=true
 JWT_EXPIRES_IN_SECONDS=3600
 JWT_SECRET=<Render can generate this>
-MSSQL_SERVER=<your-azure-sql-server>.database.windows.net
-MSSQL_DATABASE=ClientOpsStudio
-MSSQL_USER=<your-sql-admin-user>
-MSSQL_PASSWORD=<your-sql-admin-password>
+DATABASE_URL=<your-neon-connection-string>
 ```
 
-When `MSSQL_AUTO_MIGRATE=true`, the API creates the required tables, indexes, and demo rows during startup if they do not exist yet.
+When `POSTGRES_AUTO_MIGRATE=true`, the API creates the required tables, indexes, and demo rows during startup if they do not exist yet.
 
 ## Steps
 
 1. Create a public GitHub repository named `malikabdulfarhan`.
 2. Push this project folder to that repository.
-3. Create an Azure SQL database named `ClientOpsStudio`.
-4. Allow Azure SQL firewall access from Azure services and Render outbound traffic as needed.
+3. Create a Neon project named `malikabdulfarhan`.
+4. Copy the Neon production branch connection string.
 5. Create a Render Web Service from the GitHub repo.
 6. Use `malikabdulfarhan` as the Render service name.
 7. Set the environment variables above.
-8. Deploy and open `/api/system/health` to verify MSSQL is active.
+8. Deploy and open `/api/system/health` to verify Postgres is active.
 
 ## Verification URLs
 

@@ -8,8 +8,8 @@
 - JWT authentication and protected API routes
 - Layered Express API: routes -> controllers -> services -> providers
 - Pagination, filtering, sorting, and observable API response shapes
-- MSSQL-ready database provider with schema, seed data, and Docker setup
-- Deployment-friendly demo mode when a hosted SQL Server is not configured
+- Neon/Postgres provider plus MSSQL-ready database provider with schema, seed data, and Docker setup
+- Deployment-friendly demo mode when a hosted database is not configured
 
 ## Demo Login
 
@@ -38,6 +38,19 @@ Then run `database/schema.sql` and `database/seed.sql` against the `ClientOpsStu
 
 For hosted MSSQL, set `MSSQL_AUTO_MIGRATE=true` so the API creates the required tables, indexes, and demo rows on startup.
 
+## Neon Postgres Setup
+
+Set these environment variables when deploying with Neon:
+
+```text
+DATABASE_PROVIDER=postgres
+POSTGRES_AUTO_MIGRATE=true
+POSTGRES_SSL=true
+DATABASE_URL=<your-neon-connection-string>
+```
+
+The API creates the required Postgres tables, indexes, and demo rows on startup.
+
 ## Free Full-Stack URL
 
 The shortest recommended free public URL is:
@@ -46,7 +59,7 @@ The shortest recommended free public URL is:
 https://malikabdulfarhan.onrender.com
 ```
 
-Use Render for the React + Node/Express app and Azure SQL Free for MSSQL. See `docs/free-fullstack-deployment.md` for the deployment checklist and required environment variables.
+Use Render for the React + Node/Express app and Neon Free Postgres for the hosted database. See `docs/free-fullstack-deployment.md` for the deployment checklist and required environment variables.
 
 ## GitHub vs Bitbucket
 

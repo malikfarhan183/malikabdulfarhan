@@ -10,12 +10,12 @@ export function getApiRouter(): Router {
   const router = Router();
 
   router.post('/auth/login', handleRequest(authController.login));
+  router.get('/system/health', handleRequest(systemController.getHealth));
   router.get('/auth/me', authenticate, handleRequest(authController.getMe));
   router.get('/dashboard/summary', authenticate, handleRequest(dashboardController.getDashboardSummary));
   router.get('/projects', authenticate, handleRequest(projectController.getProjects));
   router.get('/projects/:projectId', authenticate, handleRequest(projectController.getProjectById));
   router.get('/audit-events', authenticate, handleRequest(projectController.getAuditEvents));
-  router.get('/system/health', authenticate, handleRequest(systemController.getHealth));
 
   return router;
 }
