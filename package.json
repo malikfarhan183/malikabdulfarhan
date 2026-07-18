@@ -7,6 +7,7 @@
     "dev": "node scripts/dev.js",
     "build": "node scripts/build.js",
     "build:api": "node scripts/run-tsc.js -p apps/api/tsconfig.json",
+    "build:vercel": "node scripts/run-tsc.js -p tsconfig.vercel.json",
     "build:web": "node scripts/run-vite.js build --config apps/web/vite.config.js",
     "start": "node dist/api/index.js",
     "test": "npm run build:api && node --test apps/api/tests/authService.test.js apps/api/tests/projectService.test.js"

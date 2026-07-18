@@ -8,19 +8,19 @@ Use this path when the portfolio must run frontend, backend, and database from a
 https://malikabdulfarhan.onrender.com
 ```
 
-Render gives this URL when the web service name `malikabdulfarhan` is available. If it is already taken, use the shortest available fallback:
+Vercel gives this URL when the project name `malikabdulfarhan` is available. If it is already taken, use the shortest available fallback:
 
 ```text
-https://malikabdulfarhan-clientops.onrender.com
+https://malikabdulfarhan-clientops.vercel.app
 ```
 
 ## Hosting Shape
 
-- Render Free Web Service: React frontend and Node/Express API from one URL.
+- Vercel Hobby: React frontend and Node/Express API from one URL.
 - Neon Free Postgres: SQL database for the project data without card setup.
 - GitHub public repo: source code review for clients.
 
-## Required Render Environment Variables
+## Required Vercel Environment Variables
 
 ```text
 NODE_ENV=production
@@ -40,14 +40,14 @@ When `POSTGRES_AUTO_MIGRATE=true`, the API creates the required tables, indexes,
 2. Push this project folder to that repository.
 3. Create a Neon project named `malikabdulfarhan`.
 4. Copy the Neon production branch connection string.
-5. Create a Render Web Service from the GitHub repo.
-6. Use `malikabdulfarhan` as the Render service name.
+5. Import the GitHub repo into Vercel.
+6. Use `malikabdulfarhan` as the Vercel project name.
 7. Set the environment variables above.
 8. Deploy and open `/api/system/health` to verify Postgres is active.
 
 ## Verification URLs
 
 ```text
-https://malikabdulfarhan.onrender.com
-https://malikabdulfarhan.onrender.com/api/system/health
+https://malikabdulfarhan.vercel.app
+https://malikabdulfarhan.vercel.app/api/system/health
 ```
