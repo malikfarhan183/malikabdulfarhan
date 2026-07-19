@@ -2,6 +2,7 @@ import type {Request} from 'express';
 import {getProjectRepository} from '../providers/repositoryFactory';
 import {AuditService} from '../services/auditService';
 import {ProjectService} from '../services/projectService';
+import {requireString} from '../utils/validators';
 
 const getProjectService = () => new ProjectService(getProjectRepository());
 
@@ -10,8 +11,10 @@ export async function getProjects(request: Request) {
 }
 
 export async function getProjectById(request: Request) {
+  const projectId = requireString(request.params.projectId, 'projectId');
+
   return {
-    data: await getProjectService().getProjectById(request.params.projectId),
+    data: await getProjectService().getProjectById(projectId),
   };
 }
 
