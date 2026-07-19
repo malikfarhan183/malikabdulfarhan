@@ -56,7 +56,7 @@ The API creates the required Postgres tables, indexes, and demo rows on startup.
 The shortest recommended free public URL is:
 
 ```text
-https://malikabdulfarhan.vercel.app
+https://malikabdulfarhan-portfolio.vercel.app
 ```
 
 Use Vercel for the React + Node/Express serverless app and Neon Free Postgres for the hosted database. See `docs/free-fullstack-deployment.md` for the deployment checklist and required environment variables.

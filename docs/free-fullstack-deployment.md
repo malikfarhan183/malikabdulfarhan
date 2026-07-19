@@ -5,10 +5,11 @@ Use this path when the portfolio must run frontend, backend, and database from a
 ## Recommended Free URL
 
 ```text
-https://malikabdulfarhan.onrender.com
+https://malikabdulfarhan-portfolio.vercel.app
 ```
 
-Vercel gives this URL when the project name `malikabdulfarhan` is available. If it is already taken, use the shortest available fallback:
+Vercel gives this URL from the project name `malikabdulfarhan-portfolio`.
+If that project name is already taken, use the shortest available fallback:
 
 ```text
 https://malikabdulfarhan-clientops.vercel.app
@@ -28,7 +29,7 @@ DATABASE_PROVIDER=postgres
 POSTGRES_AUTO_MIGRATE=true
 POSTGRES_SSL=true
 JWT_EXPIRES_IN_SECONDS=3600
-JWT_SECRET=<Render can generate this>
+JWT_SECRET=<long-random-secret>
 DATABASE_URL=<your-neon-connection-string>
 ```
 
@@ -41,13 +42,13 @@ When `POSTGRES_AUTO_MIGRATE=true`, the API creates the required tables, indexes,
 3. Create a Neon project named `malikabdulfarhan`.
 4. Copy the Neon production branch connection string.
 5. Import the GitHub repo into Vercel.
-6. Use `malikabdulfarhan` as the Vercel project name.
+6. Use `malikabdulfarhan-portfolio` as the Vercel project name.
 7. Set the environment variables above.
 8. Deploy and open `/api/system/health` to verify Postgres is active.
 
 ## Verification URLs
 
 ```text
-https://malikabdulfarhan.vercel.app
-https://malikabdulfarhan.vercel.app/api/system/health
+https://malikabdulfarhan-portfolio.vercel.app
+https://malikabdulfarhan-portfolio.vercel.app/api/system/health
 ```
